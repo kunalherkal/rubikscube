@@ -3,3 +3,4 @@ rubikscube.iml
 .classpath
 .settings/
 .project
+target/

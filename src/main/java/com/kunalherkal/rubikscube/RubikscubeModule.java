@@ -2,6 +2,7 @@ package com.kunalherkal.rubikscube;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Singleton;
+import com.kunalherkal.rubikscube.cube.Cube;
 import com.kunalherkal.rubikscube.sides.Blue;
 import com.kunalherkal.rubikscube.sides.Green;
 import com.kunalherkal.rubikscube.sides.Orange;
@@ -20,7 +21,7 @@ public final class RubikscubeModule extends AbstractModule{
 		bind(Green.class).in(Singleton.class);
 		bind(Orange.class).in(Singleton.class);
 		bind(Red.class).in(Singleton.class);
-		
+		bind(Cube.class).in(Singleton.class);
 	}
 
 }
