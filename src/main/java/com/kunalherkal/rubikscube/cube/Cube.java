@@ -44,10 +44,10 @@ public final class Cube {
 		this.red.setRight(this.yellow);
 		
 		this.blue.setOpposite(this.green);
-		this.blue.setUp(this.white);
-		this.blue.setDown(this.yellow);
-		this.blue.setLeft(this.red);
-		this.blue.setRight(this.orange);
+		this.blue.setUp(this.yellow);
+		this.blue.setDown(this.white);
+		this.blue.setLeft(this.orange);
+		this.blue.setRight(this.red);
 		
 		this.green.setOpposite(this.blue);
 		this.green.setUp(this.white);
