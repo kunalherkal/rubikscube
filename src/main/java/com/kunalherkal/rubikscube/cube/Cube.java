@@ -10,12 +10,12 @@ import com.kunalherkal.rubikscube.sides.White;
 import com.kunalherkal.rubikscube.sides.Yellow;
 
 public final class Cube {
-	private Side white;
-	private Side yellow;
-	private Side blue;
-	private Side red;
-	private Side green;
-	private Side orange;
+	private final Side white;
+	private final Side yellow;
+	private final Side blue;
+	private final Side red;
+	private final Side green;
+	private final Side orange;
 
 	@Inject
 	public Cube(White white, Yellow yellow, Blue blue, Red red, Green green,
@@ -26,6 +26,30 @@ public final class Cube {
 		this.red = red;
 		this.green = green;
 		this.orange = orange;
+	}
+
+	public Side getWhite() {
+		return white;
+	}
+
+	public Side getYellow() {
+		return yellow;
+	}
+
+	public Side getBlue() {
+		return blue;
+	}
+
+	public Side getRed() {
+		return red;
+	}
+
+	public Side getGreen() {
+		return green;
+	}
+
+	public Side getOrange() {
+		return orange;
 	}
 
 	@Override
