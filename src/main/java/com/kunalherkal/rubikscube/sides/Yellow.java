@@ -7,6 +7,7 @@ public final class Yellow extends SideAdapter {
 	
 	@Inject
 	public Yellow(){
+		
 		for (int i = 0; i < colors.length; i++) {
 			colors[i] = Color.YELLOW;
 		}

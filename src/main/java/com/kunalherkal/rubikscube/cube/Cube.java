@@ -26,6 +26,47 @@ public final class Cube {
 		this.red = red;
 		this.green = green;
 		this.orange = orange;
+		
+		initializeCube();
+	}
+
+	private void initializeCube() {
+		this.white.setOpposite(this.yellow);
+		this.white.setUp(this.blue);
+		this.white.setDown(this.green);
+		this.white.setLeft(this.orange);
+		this.white.setRight(this.red);
+		
+		this.red.setOpposite(this.orange);
+		this.red.setUp(this.blue);
+		this.red.setDown(this.green);
+		this.red.setLeft(this.white);
+		this.red.setRight(this.yellow);
+		
+		this.blue.setOpposite(this.green);
+		this.blue.setUp(this.white);
+		this.blue.setDown(this.yellow);
+		this.blue.setLeft(this.red);
+		this.blue.setRight(this.orange);
+		
+		this.green.setOpposite(this.blue);
+		this.green.setUp(this.white);
+		this.green.setDown(this.yellow);
+		this.green.setLeft(this.orange);
+		this.green.setRight(this.red);
+		
+		this.orange.setOpposite(this.red);
+		this.orange.setUp(this.blue);
+		this.orange.setDown(this.green);
+		this.orange.setLeft(this.yellow);
+		this.orange.setRight(this.white);
+		
+		this.yellow.setOpposite(this.white);
+		this.yellow.setUp(this.blue);
+		this.yellow.setDown(this.green);
+		this.yellow.setLeft(this.red);
+		this.yellow.setRight(this.orange);
+		
 	}
 
 	public Side getWhite() {
