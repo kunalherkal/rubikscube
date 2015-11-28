@@ -11,6 +11,7 @@ public final class App {
 		Injector injector = Guice.createInjector(new RubikscubeModule());
 		Cube cube = injector.getInstance(Cube.class);
 
+		System.out.println("Hold the cube with white side facing you and blue side facing up");
 		System.out.println("Cube details:" + cube.toString());
 		
 		cube.getWhite().setTileColor(0, Color.RED);
@@ -24,14 +25,21 @@ public final class App {
 
 		System.out.println("Cube details:" + cube.toString());
 		
-		cube.getWhite().rotateClockwise();
-
+		
+		System.out.println("Hold the cube with blue side facing you and white side facing down");
+		cube.getBlue().setTileColor(0, Color.WHITE);
+		cube.getBlue().setTileColor(1, Color.BLUE);
+		cube.getBlue().setTileColor(2, Color.RED);
+		cube.getBlue().setTileColor(3, Color.GREEN);
+		cube.getBlue().setTileColor(5, Color.ORANGE);
+		cube.getBlue().setTileColor(6, Color.GREEN);
+		cube.getBlue().setTileColor(7, Color.WHITE);
+		cube.getBlue().setTileColor(8, Color.BLUE);
+		
 		System.out.println("Cube details:" + cube.toString());
 		
-		cube.getWhite().setOpposite(cube.getYellow());
-		
-		cube.getYellow().setOpposite(cube.getWhite());
-		
+		cube.getWhite().rotateClockwise();
+
 		System.out.println("Cube details:" + cube.toString());
 	}
 }

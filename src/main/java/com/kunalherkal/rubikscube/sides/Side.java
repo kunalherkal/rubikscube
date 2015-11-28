@@ -29,5 +29,7 @@ public interface Side {
 	public Side getOpposite();
 
 	public void setOpposite(Side opposite);
+	
+	public Color[] getColors();
 
 }
