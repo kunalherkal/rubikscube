@@ -1,4 +1,4 @@
-package rubikscube;
+package com.kunalherkal.rubikscube;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -9,14 +9,17 @@ import com.google.inject.Injector;
 import com.kunalherkal.rubikscube.RubikscubeModule;
 import com.kunalherkal.rubikscube.colors.Color;
 import com.kunalherkal.rubikscube.cube.Cube;
+import com.kunalherkal.rubikscube.solution.RubikscubeSolver;
 
 public final class MovementTest {
 	Cube cube;
+	RubikscubeSolver rubikscubeSolver;
 
 	@Before
 	public void setUp() {
 		Injector injector = Guice.createInjector(new RubikscubeModule());
 		cube = injector.getInstance(Cube.class);
+		rubikscubeSolver = injector.getInstance(RubikscubeSolver.class);
 
 		System.out.println("Cube details:" + cube.toString());
 
@@ -143,6 +146,11 @@ public final class MovementTest {
 		Assert.assertEquals(Color.WHITE, cube.getGreen().getColors()[1]);
 		Assert.assertEquals(Color.BLUE, cube.getGreen().getColors()[2]);
 
+	}
+	
+	@Test
+	public void testWhiteCrossOnYellowSide() throws Exception{
+		rubikscubeSolver.solveWhiteCrosssOnYellowSide();
 	}
 
 }
