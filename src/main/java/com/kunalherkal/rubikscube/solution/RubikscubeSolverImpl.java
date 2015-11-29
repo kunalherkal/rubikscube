@@ -73,7 +73,7 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 			
 			System.out.println("Starting!");
 			
-			Thread.sleep(5000);
+			
 			
 			//Moves for up side
 			moveUpsThirdPlacedWhiteTileOnYellowSide(yellow, up, left);
@@ -255,19 +255,8 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 	}
 
 	private void moveDownsFifthPlacedWhiteTileOnYellowSide(Side yellow,
-			Side up, Side right) {
+			Side up, Side left) {
 		while (up.getColors()[5] == Color.WHITE) {
-			if(yellow.getColors()[5] == Color.WHITE){
-				yellow.rotateClockwise();
-			} else {
-				right.rotateClockwise();
-			}
-		}
-	}
-
-	private void moveDownsThirdPlacedWhiteTileOnYellowSide(Side yellow,
-			Side down, Side left) {
-		while (down.getColors()[3] == Color.WHITE) {
 			if(yellow.getColors()[3] == Color.WHITE){
 				yellow.rotateClockwise();
 			} else {
@@ -276,26 +265,37 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 		}
 	}
 
-	private void moveUpsFifthPlacedWhiteTileOnYellowSide(Side yellow, Side up,
-			Side right) {
-		while (up.getColors()[5] == Color.WHITE) {
+	private void moveDownsThirdPlacedWhiteTileOnYellowSide(Side yellow,
+			Side down, Side right) {
+		while (down.getColors()[3] == Color.WHITE) {
 			if(yellow.getColors()[5] == Color.WHITE){
 				yellow.rotateClockwise();
 			} else {
-				right.rotateAntiClockwise();
+				right.rotateClockwise();
+			}
+		}
+	}
+
+	private void moveUpsFifthPlacedWhiteTileOnYellowSide(Side yellow, Side up,
+			Side left) {
+		while (up.getColors()[5] == Color.WHITE) {
+			if(yellow.getColors()[3] == Color.WHITE){
+				yellow.rotateClockwise();
+			} else {
+				left.rotateClockwise();
 			}
 		}
 	}
 
 	private void moveUpsThirdPlacedWhiteTileOnYellowSide(Side yellow, Side up,
-			Side left) {
+			Side right) {
 		
 		while (up.getColors()[3] == Color.WHITE) {
 			System.out.println("Cube: " + cube.toString());
-			if(yellow.getColors()[3] == Color.WHITE){
+			if(yellow.getColors()[5] == Color.WHITE){
 				yellow.rotateClockwise();
 			} else {
-				left.rotateClockwise();
+				right.rotateAntiClockwise();
 			}
 		}
 	}
