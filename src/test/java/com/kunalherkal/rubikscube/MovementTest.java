@@ -2,6 +2,7 @@ package com.kunalherkal.rubikscube;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.google.inject.Guice;
@@ -148,6 +149,7 @@ public final class MovementTest {
 
 	}
 	
+	@Ignore
 	@Test
 	public void testWhiteCrossOnYellowSide() throws Exception{
 		rubikscubeSolver.solveWhiteCrosssOnYellowSide();
