@@ -473,9 +473,6 @@ public final class MovementTest {
 
 	}
 	
-	@Test
-	public void testWhiteCrossOnYellowSide() throws Exception{
-		rubikscubeSolver.solveWhiteCrosssOnYellowSide();
-	}
+	
 
 }

@@ -25,16 +25,13 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 
 	private void solveWhiteCross() {
 
-		try {
+		
 			solveWhiteCrosssOnYellowSide();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 
 	}
 
-	public void solveWhiteCrosssOnYellowSide() throws InterruptedException {
+	public void solveWhiteCrosssOnYellowSide()  {
 		boolean redSideTileIsWhite = false;
 		boolean blueSideTileIsWhite = false;
 		boolean greenSideTileIsWhite = false;
@@ -70,56 +67,44 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 		
 		while (!(redSideTileIsWhite && blueSideTileIsWhite
 				&& orangeSideTileIsWhite && greenSideTileIsWhite)) {
-			
-			System.out.println("Starting!");
-			
-			
-			
 			//Moves for up side
-			moveUpsThirdPlacedWhiteTileOnYellowSide(yellow, up, left);
+			moveUpsThirdPlacedWhiteTileOnYellowSide(yellow, up, right);
 
-			moveUpsFifthPlacedWhiteTileOnYellowSide(yellow, up, right);
+			moveUpsFifthPlacedWhiteTileOnYellowSide(yellow, up, left);
 			
 			while (up.getColors()[1] == Color.WHITE) {
 				if(yellow.getColors()[1] == Color.WHITE){
 					yellow.rotateClockwise();
 				} else {
 					up.rotateClockwise();
-					moveUpsFifthPlacedWhiteTileOnYellowSide(yellow, up, right);
+					moveUpsFifthPlacedWhiteTileOnYellowSide(yellow, up, left);
 				}
 			}
 
 			while (up.getColors()[7] == Color.WHITE) {
 				up.rotateClockwise();
-				moveUpsThirdPlacedWhiteTileOnYellowSide(yellow, up, left);
+				moveUpsThirdPlacedWhiteTileOnYellowSide(yellow, up, right);
 			}
 			
-			System.out.println("Moves for up siade done!");
-			
-			Thread.sleep(5000);
-			
 			//Moves for down side
-			moveDownsThirdPlacedWhiteTileOnYellowSide(yellow, down, left);
+			moveDownsThirdPlacedWhiteTileOnYellowSide(yellow, down, right);
 
-			moveDownsFifthPlacedWhiteTileOnYellowSide(yellow, up, right);
+			moveDownsFifthPlacedWhiteTileOnYellowSide(yellow, down, left);
 			
 			while (up.getColors()[7] == Color.WHITE) {
 				if(yellow.getColors()[7] == Color.WHITE){
 					yellow.rotateClockwise();
 				} else {
 					down.rotateClockwise();
-					moveDownsThirdPlacedWhiteTileOnYellowSide(yellow, down, left);
+					moveDownsThirdPlacedWhiteTileOnYellowSide(yellow, down, right);
 				}
 			}
 
 			while (down.getColors()[1] == Color.WHITE) {
 				down.rotateClockwise();
-				moveDownsFifthPlacedWhiteTileOnYellowSide(yellow, up, right);
+				moveDownsFifthPlacedWhiteTileOnYellowSide(yellow, down, left);
 			}
 			
-			System.out.println("Moves for down siade done!");
-			
-			Thread.sleep(5000);
 			
 			//Moves for down left
 			moveLeftsFirstPlacedWhiteTileOnYellowSide(yellow, up, left);
@@ -140,10 +125,6 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 				moveLeftsSeventhPlacedWhiteTileOnYellowSide(yellow, down, left);
 			}
 			
-			System.out.println("Moves for left siade done!");
-			
-			Thread.sleep(5000);
-			
 			//Moves for right
 			moveRightsFirstPlacedWhiteTileOnYellowSide(yellow, up, right);
 			
@@ -162,10 +143,6 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 				right.rotateClockwise();
 				moveRightsFirstPlacedWhiteTileOnYellowSide(yellow, up, right);
 			}
-			
-			System.out.println("Moves for right siade done!");
-			
-			Thread.sleep(5000);
 			
 			//Moves for opposite
 			while (opposite.getColors()[1] == Color.WHITE) {
@@ -202,6 +179,30 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 					right.rotateClockwise();
 					right.rotateClockwise();
 				}
+			}
+			
+			if(yellow.getColors()[1] == Color.WHITE){
+				blueSideTileIsWhite = true;
+			} else {
+				blueSideTileIsWhite = false;
+			}
+				
+			if(yellow.getColors()[3] == Color.WHITE){
+				redSideTileIsWhite = true;
+			} else {
+				redSideTileIsWhite = false;
+			}
+					
+			if(yellow.getColors()[5] == Color.WHITE){
+				orangeSideTileIsWhite = true;
+			} else {
+				orangeSideTileIsWhite = false;
+			}
+				 
+			if(yellow.getColors()[7] == Color.WHITE){
+				greenSideTileIsWhite = true;
+			} else {
+				greenSideTileIsWhite = false;
 			}
 			
 		}
@@ -255,8 +256,8 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 	}
 
 	private void moveDownsFifthPlacedWhiteTileOnYellowSide(Side yellow,
-			Side up, Side left) {
-		while (up.getColors()[5] == Color.WHITE) {
+			Side down, Side left) {
+		while (down.getColors()[5] == Color.WHITE) {
 			if(yellow.getColors()[3] == Color.WHITE){
 				yellow.rotateClockwise();
 			} else {
@@ -291,7 +292,6 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 			Side right) {
 		
 		while (up.getColors()[3] == Color.WHITE) {
-			System.out.println("Cube: " + cube.toString());
 			if(yellow.getColors()[5] == Color.WHITE){
 				yellow.rotateClockwise();
 			} else {
