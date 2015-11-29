@@ -95,8 +95,8 @@ public final class Cube {
 
 	@Override
 	public String toString() {
-		return "Cube [white=" + white + ", yellow=" + yellow + ", blue=" + blue
-				+ ", red=" + red + ", green=" + green + ", orange=" + orange
-				+ "]";
+		return "\n=====================================\nCube \n[white=" + white + ", \nyellow=" + yellow + ", \nblue=" + blue
+				+ ", \nred=" + red + ", \ngreen=" + green + ", \norange=" + orange
+				+ "]\n========================================";
 	}
 }
