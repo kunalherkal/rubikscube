@@ -1,18 +1,26 @@
-package com.kunalherkal.rubikscube;
+package rubikscube;
+
+
+
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import com.kunalherkal.rubikscube.RubikscubeModule;
 import com.kunalherkal.rubikscube.colors.Color;
 import com.kunalherkal.rubikscube.cube.Cube;
 
-public final class App {
+public final class MovementTest {
+	Cube cube;
 
-	public static void main(String[] args) {
+	@Before
+	public void setUp() {
 		Injector injector = Guice.createInjector(new RubikscubeModule());
-		Cube cube = injector.getInstance(Cube.class);
-
-		System.out.println("Hold the cube with white side facing you and blue side facing up");
-		System.out.println("Cube details:" + cube.toString());
+		cube = injector.getInstance(Cube.class);
+		
+System.out.println("Cube details:" + cube.toString());
 		
 		cube.getWhite().setTileColor(0, Color.RED);
 		cube.getWhite().setTileColor(1, Color.RED);
@@ -75,9 +83,22 @@ public final class App {
 		cube.getGreen().setTileColor(8, Color.RED);
 		
 		System.out.println("Cube details:" + cube.toString());
-		
-		cube.getWhite().rotateClockwise();
-
-		System.out.println("Cube details:" + cube.toString());
 	}
+	
+	@Test
+	public void testClockWiseMovementForWhiteSide(){
+		cube.getWhite().rotateClockwise();
+		
+		Assert.assertEquals(cube.getWhite().getColors()[0], Color.WHITE);
+		Assert.assertEquals(cube.getWhite().getColors()[1], Color.BLUE);
+		Assert.assertEquals(cube.getWhite().getColors()[2], Color.RED);
+		Assert.assertEquals(cube.getWhite().getColors()[3], Color.YELLOW);
+		Assert.assertEquals(cube.getWhite().getColors()[4], Color.WHITE);
+		Assert.assertEquals(cube.getWhite().getColors()[5], Color.RED);
+		Assert.assertEquals(cube.getWhite().getColors()[6], Color.GREEN);
+		Assert.assertEquals(cube.getWhite().getColors()[7], Color.RED);
+		Assert.assertEquals(cube.getWhite().getColors()[8], Color.YELLOW);
+		
+	}
+
 }
