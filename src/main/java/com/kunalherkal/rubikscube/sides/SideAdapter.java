@@ -49,9 +49,9 @@ public abstract class SideAdapter implements Side {
 		tempSideColors[1] = up.getColors()[7];
 		tempSideColors[2] = up.getColors()[8];
 		
-		up.getColors()[6] = left.getColors()[2];
+		up.getColors()[6] = left.getColors()[8];
 		up.getColors()[7] = left.getColors()[5];
-		up.getColors()[8] = left.getColors()[8];
+		up.getColors()[8] = left.getColors()[2];
 		
 		left.getColors()[2] = down.getColors()[0];
 		left.getColors()[5] = down.getColors()[1];
@@ -106,7 +106,7 @@ public abstract class SideAdapter implements Side {
 		
 		down.getColors()[0] = left.getColors()[2];
 		down.getColors()[1] = left.getColors()[5];
-		down.getColors()[2] = down.getColors()[2];
+		down.getColors()[2] = left.getColors()[8];
 		
 		left.getColors()[2] = tempSideColors[2];
 		left.getColors()[5] = tempSideColors[1];
