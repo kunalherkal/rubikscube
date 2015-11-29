@@ -52,7 +52,7 @@ public final class Orange extends SideAdapter {
 		
 		up.getColors()[6] = right.getColors()[6];
 		up.getColors()[3] = right.getColors()[3];
-		up.getColors()[6] = right.getColors()[0];
+		up.getColors()[0] = right.getColors()[0];
 		
 		right.getColors()[0] = down.getColors()[0];
 		right.getColors()[3] = down.getColors()[3];

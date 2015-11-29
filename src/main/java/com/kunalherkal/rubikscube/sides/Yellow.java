@@ -60,7 +60,7 @@ public final class Yellow extends SideAdapter {
 		right.getColors()[6] = down.getColors()[8];
 		
 		down.getColors()[6] = left.getColors()[8];
-		down.getColors()[7] = left.getColors()[6];
+		down.getColors()[7] = left.getColors()[5];
 		down.getColors()[8] = left.getColors()[2];
 		
 		left.getColors()[2] = tempSideColors[0];
