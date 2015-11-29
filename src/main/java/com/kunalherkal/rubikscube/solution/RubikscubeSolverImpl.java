@@ -128,14 +128,14 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 			//Moves for right
 			moveRightsFirstPlacedWhiteTileOnYellowSide(yellow, up, right);
 			
-			moveRightsSeventhPlacedWhiteTileOnYellowSide(yellow, down, left);
+			moveRightsSeventhPlacedWhiteTileOnYellowSide(yellow, down, right);
 			
 			while (right.getColors()[5] == Color.WHITE) {
 				if(yellow.getColors()[5] == Color.WHITE){
 					yellow.rotateClockwise();
 				} else {
 					right.rotateClockwise();
-					moveRightsSeventhPlacedWhiteTileOnYellowSide(yellow, down, left);
+					moveRightsSeventhPlacedWhiteTileOnYellowSide(yellow, down, right);
 				}
 			}
 
@@ -212,8 +212,8 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 	}
 
 	private void moveRightsSeventhPlacedWhiteTileOnYellowSide(Side yellow,
-			Side down, Side left) {
-		while (left.getColors()[7] == Color.WHITE) {
+			Side down, Side right) {
+		while (right.getColors()[7] == Color.WHITE) {
 			if(yellow.getColors()[7] == Color.WHITE){
 				yellow.rotateClockwise();
 			} else {

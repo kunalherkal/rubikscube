@@ -9,7 +9,7 @@ import com.kunalherkal.rubikscube.colors.Color;
 import com.kunalherkal.rubikscube.cube.Cube;
 import com.kunalherkal.rubikscube.solution.RubikscubeSolver;
 
-public final class WhiteCrossTest {
+public final class WhiteCrossOnYellowSideTest1 {
 	Cube cube;
 	RubikscubeSolver rubikscubeSolver;
 	
