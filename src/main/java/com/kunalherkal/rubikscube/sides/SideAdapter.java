@@ -48,7 +48,6 @@ public abstract class SideAdapter implements Side {
 		tempSideColors[0] = up.getColors()[6];
 		tempSideColors[1] = up.getColors()[7];
 		tempSideColors[2] = up.getColors()[8];
-		System.out.println("TempSideColors: " + Arrays.toString(tempSideColors));
 		
 		up.getColors()[6] = left.getColors()[2];
 		up.getColors()[7] = left.getColors()[5];
@@ -66,6 +65,52 @@ public abstract class SideAdapter implements Side {
 		right.getColors()[3] = tempSideColors[1];
 		right.getColors()[6] = tempSideColors[2];
 		
+
+	}
+	
+	public void rotateAntiClockwise() {
+		System.out.println("Rotating Anti-clockwise");
+		Color[] tempColors = new Color[9];
+		tempColors[0] = colors[0];
+		tempColors[1] = colors[1];
+		tempColors[2] = colors[2];
+		tempColors[3] = colors[3];
+		tempColors[4] = colors[4];
+		tempColors[5] = colors[5];
+		tempColors[6] = colors[6];
+		tempColors[7] = colors[7];
+		tempColors[8] = colors[8];
+		
+		colors[0] = tempColors[2];
+		colors[1] = tempColors[5];
+		colors[2] = tempColors[8];
+		colors[3] = tempColors[1];
+		colors[4] = tempColors[4];
+		colors[5] = tempColors[7];
+		colors[6] = tempColors[0];
+		colors[7] = tempColors[3];
+		colors[8] = tempColors[6];
+		
+		Color[] tempSideColors = new Color[3];
+		tempSideColors[0] = up.getColors()[6];
+		tempSideColors[1] = up.getColors()[7];
+		tempSideColors[2] = up.getColors()[8];
+		
+		up.getColors()[6] = right.getColors()[0];
+		up.getColors()[7] = right.getColors()[3];
+		up.getColors()[8] = right.getColors()[6];
+		
+		right.getColors()[0] = down.getColors()[0];
+		right.getColors()[3] = down.getColors()[1];
+		right.getColors()[6] = down.getColors()[2];
+		
+		down.getColors()[0] = left.getColors()[2];
+		down.getColors()[1] = left.getColors()[5];
+		down.getColors()[2] = down.getColors()[2];
+		
+		left.getColors()[2] = tempSideColors[2];
+		left.getColors()[5] = tempSideColors[1];
+		left.getColors()[8] = tempSideColors[0];
 
 	}
 
