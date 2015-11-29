@@ -6,7 +6,7 @@ public interface RubikscubeSolver {
 	
 	boolean whiteCrossOnWhiteSide();
 	
-	
+	void solveWhiteCrosssOnYellowSide() throws InterruptedException;
 	
 
 }
