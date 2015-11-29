@@ -29,9 +29,6 @@ public final class MovementTest {
 		cube.getWhite().setTileColor(7, Color.YELLOW);
 		cube.getWhite().setTileColor(8, Color.GREEN);
 
-		System.out
-				.println("Hold the cube with blue side facing you and white side facing down");
-
 		cube.getRed().setTileColor(0, Color.ORANGE);
 		cube.getRed().setTileColor(1, Color.GREEN);
 		cube.getRed().setTileColor(2, Color.WHITE);
