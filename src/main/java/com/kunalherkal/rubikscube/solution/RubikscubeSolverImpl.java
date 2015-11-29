@@ -145,7 +145,7 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 			}
 			
 			//Moves for opposite
-			while (opposite.getColors()[1] == Color.WHITE) {
+			while (opposite.getColors()[7] == Color.WHITE) {
 				if(yellow.getColors()[7] == Color.WHITE){
 					yellow.rotateClockwise();
 				} else {
@@ -154,7 +154,7 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 				}
 			}
 			
-			while (opposite.getColors()[7] == Color.WHITE) {
+			while (opposite.getColors()[1] == Color.WHITE) {
 				if(yellow.getColors()[1] == Color.WHITE){
 					yellow.rotateClockwise();
 				} else {
@@ -164,20 +164,20 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 			}
 			
 			while (opposite.getColors()[3] == Color.WHITE) {
-				if(yellow.getColors()[3] == Color.WHITE){
-					yellow.rotateClockwise();
-				} else {
-					left.rotateClockwise();
-					left.rotateClockwise();
-				}
-			}
-			
-			while (opposite.getColors()[5] == Color.WHITE) {
 				if(yellow.getColors()[5] == Color.WHITE){
 					yellow.rotateClockwise();
 				} else {
 					right.rotateClockwise();
 					right.rotateClockwise();
+				}
+			}
+			
+			while (opposite.getColors()[5] == Color.WHITE) {
+				if(yellow.getColors()[3] == Color.WHITE){
+					yellow.rotateClockwise();
+				} else {
+					left.rotateClockwise();
+					left.rotateClockwise();
 				}
 			}
 			
