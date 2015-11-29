@@ -13,12 +13,14 @@ public final class Orange extends SideAdapter {
 	}
 
 	public void rotateClockwise() {
-		// TODO Auto-generated method stub
+		System.out.println("Rotate Orange face clockwise");
+		super.rotateClockwise();
 		
 	}
 
 	public void rotateAntiClockwise() {
-		// TODO Auto-generated method stub
+		System.out.println("Rotate Orange face Ant-clockwise");
+		super.rotateAntiClockwise();
 		
 	}
 

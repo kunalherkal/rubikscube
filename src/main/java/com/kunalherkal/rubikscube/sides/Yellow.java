@@ -14,12 +14,14 @@ public final class Yellow extends SideAdapter {
 	}
 
 	public void rotateClockwise() {
-		// TODO Auto-generated method stub
+		System.out.println("Rotate Yellow face clockwise");
+		super.rotateClockwise();
 
 	}
 
 	public void rotateAntiClockwise() {
-		// TODO Auto-generated method stub
+		System.out.println("Rotate Yellow face Ant-clockwise");
+		super.rotateAntiClockwise();
 
 	}
 
