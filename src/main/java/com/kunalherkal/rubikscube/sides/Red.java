@@ -18,25 +18,26 @@ public final class Red extends SideAdapter {
 		super.rotateClockwise();
 
 		Color[] tempSideColors = new Color[3];
-		tempSideColors[0] = cube.getBlue().getColors()[2];
-		tempSideColors[1] = cube.getBlue().getColors()[5];
-		tempSideColors[2] = cube.getBlue().getColors()[8];
-
-		cube.getBlue().getColors()[2] = cube.getWhite().getColors()[2];
-		cube.getBlue().getColors()[5] = cube.getWhite().getColors()[5];
-		cube.getBlue().getColors()[8] = cube.getWhite().getColors()[8];
-
-		cube.getWhite().getColors()[2] = cube.getGreen().getColors()[2];
-		cube.getWhite().getColors()[5] = cube.getGreen().getColors()[5];
-		cube.getWhite().getColors()[8] = cube.getGreen().getColors()[8];
-
-		cube.getGreen().getColors()[2] = cube.getYellow().getColors()[6];
-		cube.getGreen().getColors()[5] = cube.getYellow().getColors()[3];
-		cube.getGreen().getColors()[8] = cube.getYellow().getColors()[0];
-
-		cube.getYellow().getColors()[0] = tempSideColors[2];
-		cube.getYellow().getColors()[3] = tempSideColors[1];
-		cube.getYellow().getColors()[6] = tempSideColors[0];
+		tempSideColors[0] = cube.getYellow().getColors()[6];
+		tempSideColors[1] = cube.getYellow().getColors()[7];
+		tempSideColors[2] = cube.getYellow().getColors()[8];
+		
+		cube.getYellow().getColors()[6] = cube.getBlue().getColors()[8];
+		cube.getYellow().getColors()[7] = cube.getBlue().getColors()[5];
+		cube.getYellow().getColors()[8] = cube.getBlue().getColors()[2];
+		
+		cube.getBlue().getColors()[2] = cube.getWhite().getColors()[0];
+		cube.getBlue().getColors()[5] = cube.getWhite().getColors()[1];
+		cube.getBlue().getColors()[8] = cube.getWhite().getColors()[2];
+		
+		cube.getWhite().getColors()[0] = cube.getGreen().getColors()[6];
+		cube.getWhite().getColors()[1] = cube.getGreen().getColors()[3];
+		cube.getWhite().getColors()[2] = cube.getGreen().getColors()[0];
+		
+		cube.getGreen().getColors()[0] = tempSideColors[0];
+		cube.getGreen().getColors()[3] = tempSideColors[1];
+		cube.getGreen().getColors()[6] = tempSideColors[2];
+		
 
 	}
 
@@ -46,25 +47,25 @@ public final class Red extends SideAdapter {
 		super.rotateAntiClockwise();
 
 		Color[] tempSideColors = new Color[3];
-		tempSideColors[0] = cube.getBlue().getColors()[2];
-		tempSideColors[1] = cube.getBlue().getColors()[5];
-		tempSideColors[2] = cube.getBlue().getColors()[8];
-
-		cube.getBlue().getColors()[2] = cube.getYellow().getColors()[6];
-		cube.getBlue().getColors()[5] = cube.getYellow().getColors()[3];
-		cube.getBlue().getColors()[8] = cube.getYellow().getColors()[0];
-
-		cube.getYellow().getColors()[0] = cube.getGreen().getColors()[8];
-		cube.getYellow().getColors()[3] = cube.getGreen().getColors()[5];
-		cube.getYellow().getColors()[6] = cube.getGreen().getColors()[2];
-
-		cube.getGreen().getColors()[2] = cube.getWhite().getColors()[2];
-		cube.getGreen().getColors()[5] = cube.getWhite().getColors()[5];
-		cube.getGreen().getColors()[8] = cube.getWhite().getColors()[8];
-
-		cube.getWhite().getColors()[2] = tempSideColors[0];
-		cube.getWhite().getColors()[5] = tempSideColors[1];
-		cube.getWhite().getColors()[8] = tempSideColors[2];
+		tempSideColors[0] = cube.getYellow().getColors()[6];
+		tempSideColors[1] = cube.getYellow().getColors()[7];
+		tempSideColors[2] = cube.getYellow().getColors()[8];
+		
+		cube.getYellow().getColors()[6] = cube.getGreen().getColors()[0];
+		cube.getYellow().getColors()[7] = cube.getGreen().getColors()[3];
+		cube.getYellow().getColors()[8] = cube.getGreen().getColors()[6];
+		
+		cube.getGreen().getColors()[0] = cube.getWhite().getColors()[2];
+		cube.getGreen().getColors()[3] = cube.getWhite().getColors()[1];
+		cube.getGreen().getColors()[6] = cube.getWhite().getColors()[0];
+		
+		cube.getWhite().getColors()[0] = cube.getBlue().getColors()[2];
+		cube.getWhite().getColors()[1] = cube.getBlue().getColors()[5];
+		cube.getWhite().getColors()[2] = cube.getBlue().getColors()[8];
+		
+		cube.getBlue().getColors()[2] = tempSideColors[2];
+		cube.getBlue().getColors()[5] = tempSideColors[1];
+		cube.getBlue().getColors()[8] = tempSideColors[0];
 
 	}
 
