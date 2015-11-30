@@ -3,13 +3,10 @@ package com.kunalherkal.rubikscube.sides;
 import java.util.Arrays;
 
 import com.kunalherkal.rubikscube.colors.Color;
+import com.kunalherkal.rubikscube.cube.Cube;
 
 public abstract class SideAdapter implements Side {
-	Side left;
-	Side right;
-	Side up;
-	Side down;
-	Side opposite;
+	
 	final Color[] colors = new Color[9];
 
 	public void setTileColor(int index, Color color) {
@@ -20,49 +17,9 @@ public abstract class SideAdapter implements Side {
 	public Color[] getColors() {
 		return colors;
 	}
-
-	public Side getLeft() {
-		return left;
-	}
-
-	public void setLeft(Side left) {
-		this.left = left;
-	}
-
-	public Side getRight() {
-		return right;
-	}
-
-	public void setRight(Side right) {
-		this.right = right;
-	}
-
-	public Side getUp() {
-		return up;
-	}
-
-	public void setUp(Side up) {
-		this.up = up;
-	}
-
-	public Side getDown() {
-		return down;
-	}
-
-	public void setDown(Side down) {
-		this.down = down;
-	}
-
-	public Side getOpposite() {
-		return opposite;
-	}
-
-	public void setOpposite(Side opposite) {
-		this.opposite = opposite;
-	}
 	
 	@Override
-	public void rotateClockwise() {
+	public void rotateClockwise(Cube cube) {
 		Color[] tempColors = new Color[9];
 		tempColors[0] = colors[0];
 		tempColors[1] = colors[1];
@@ -86,7 +43,7 @@ public abstract class SideAdapter implements Side {
 	}
 
 	@Override
-	public void rotateAntiClockwise() {
+	public void rotateAntiClockwise(Cube cube) {
 		Color[] tempColors = new Color[9];
 		tempColors[0] = colors[0];
 		tempColors[1] = colors[1];

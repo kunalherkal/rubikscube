@@ -87,7 +87,7 @@ public final class MovementTest {
 
 	@Test
 	public void testClockWiseMovementForWhiteSide() {
-		cube.getWhite().rotateClockwise();
+		cube.getWhite().rotateClockwise(cube);
 
 		Assert.assertEquals(Color.YELLOW, cube.getWhite().getColors()[0]);
 		Assert.assertEquals(Color.BLUE, cube.getWhite().getColors()[1]);
@@ -119,7 +119,7 @@ public final class MovementTest {
 
 	@Test
 	public void testAntiClockWiseMovementForWhiteSide() {
-		cube.getWhite().rotateAntiClockwise();
+		cube.getWhite().rotateAntiClockwise(cube);
 
 		Assert.assertEquals(Color.GREEN, cube.getWhite().getColors()[0]);
 		Assert.assertEquals(Color.BLUE, cube.getWhite().getColors()[1]);
@@ -151,7 +151,7 @@ public final class MovementTest {
 	
 	@Test
 	public void testClockWiseMovementForRedSide() {
-		cube.getRed().rotateClockwise();
+		cube.getRed().rotateClockwise(cube);
 
 		Assert.assertEquals(Color.RED, cube.getRed().getColors()[0]);
 		Assert.assertEquals(Color.ORANGE, cube.getRed().getColors()[1]);
@@ -183,7 +183,7 @@ public final class MovementTest {
 
 	@Test
 	public void testAntiClockWiseMovementForRedSide() {
-		cube.getRed().rotateAntiClockwise();
+		cube.getRed().rotateAntiClockwise(cube);
 
 		Assert.assertEquals(Color.GREEN, cube.getRed().getColors()[0]);
 		Assert.assertEquals(Color.GREEN, cube.getRed().getColors()[1]);
@@ -215,7 +215,7 @@ public final class MovementTest {
 	
 	@Test
 	public void testClockWiseMovementForYellowSide() {
-		cube.getYellow().rotateClockwise();
+		cube.getYellow().rotateClockwise(cube);
 
 		Assert.assertEquals(Color.WHITE, cube.getYellow().getColors()[0]);
 		Assert.assertEquals(Color.WHITE, cube.getYellow().getColors()[1]);
@@ -247,7 +247,7 @@ public final class MovementTest {
 
 	@Test
 	public void testAntiClockWiseMovementForYellowSide() {
-		cube.getYellow().rotateAntiClockwise();
+		cube.getYellow().rotateAntiClockwise(cube);
 
 		Assert.assertEquals(Color.GREEN, cube.getYellow().getColors()[0]);
 		Assert.assertEquals(Color.ORANGE, cube.getYellow().getColors()[1]);
@@ -279,7 +279,7 @@ public final class MovementTest {
 	
 	@Test
 	public void testClockWiseMovementForOrangeSide() {
-		cube.getOrange().rotateClockwise();
+		cube.getOrange().rotateClockwise(cube);
 
 		Assert.assertEquals(Color.BLUE, cube.getOrange().getColors()[0]);
 		Assert.assertEquals(Color.YELLOW, cube.getOrange().getColors()[1]);
@@ -311,7 +311,7 @@ public final class MovementTest {
 
 	@Test
 	public void testAntiClockWiseMovementForOrangeSide() {
-		cube.getOrange().rotateAntiClockwise();
+		cube.getOrange().rotateAntiClockwise(cube);
 
 		Assert.assertEquals(Color.WHITE, cube.getOrange().getColors()[0]);
 		Assert.assertEquals(Color.YELLOW, cube.getOrange().getColors()[1]);
@@ -343,7 +343,7 @@ public final class MovementTest {
 	
 	@Test
 	public void testClockWiseMovementForBlueSide() {
-		cube.getBlue().rotateClockwise();
+		cube.getBlue().rotateClockwise(cube);
 
 		Assert.assertEquals(Color.BLUE, cube.getBlue().getColors()[0]);
 		Assert.assertEquals(Color.WHITE, cube.getBlue().getColors()[1]);
@@ -377,7 +377,7 @@ public final class MovementTest {
 
 	@Test
 	public void testAntiClockWiseMovementForBlueSide() {
-		cube.getBlue().rotateAntiClockwise();
+		cube.getBlue().rotateAntiClockwise(cube);
 
 		Assert.assertEquals(Color.YELLOW, cube.getBlue().getColors()[0]);
 		Assert.assertEquals(Color.ORANGE, cube.getBlue().getColors()[1]);
@@ -409,7 +409,7 @@ public final class MovementTest {
 	
 	@Test
 	public void testClockWiseMovementForGreenSide() {
-		cube.getGreen().rotateClockwise();
+		cube.getGreen().rotateClockwise(cube);
 
 		Assert.assertEquals(Color.WHITE, cube.getGreen().getColors()[0]);
 		Assert.assertEquals(Color.RED, cube.getGreen().getColors()[1]);
@@ -443,7 +443,7 @@ public final class MovementTest {
 
 	@Test
 	public void testAntiClockWiseMovementForGreenSide() {
-		cube.getGreen().rotateAntiClockwise();
+		cube.getGreen().rotateAntiClockwise(cube);
 
 		Assert.assertEquals(Color.BLUE, cube.getGreen().getColors()[0]);
 		Assert.assertEquals(Color.YELLOW, cube.getGreen().getColors()[1]);

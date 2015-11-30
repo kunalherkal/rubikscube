@@ -2,6 +2,7 @@ package com.kunalherkal.rubikscube.sides;
 
 import com.google.inject.Inject;
 import com.kunalherkal.rubikscube.colors.Color;
+import com.kunalherkal.rubikscube.cube.Cube;
 
 public final class Green extends SideAdapter {
 
@@ -13,57 +14,57 @@ public final class Green extends SideAdapter {
 	}
 
 	@Override
-	public void rotateClockwise() {
+	public void rotateClockwise(Cube cube) {
 		System.out.println("Rotate Green face clockwise");
-		super.rotateClockwise();
+		super.rotateClockwise(cube);
 
 		Color[] tempSideColors = new Color[3];
-		tempSideColors[0] = up.getColors()[6];
-		tempSideColors[1] = up.getColors()[7];
-		tempSideColors[2] = up.getColors()[8];
+		tempSideColors[0] = cube.getWhite().getColors()[6];
+		tempSideColors[1] = cube.getWhite().getColors()[7];
+		tempSideColors[2] = cube.getWhite().getColors()[8];
 		
-		up.getColors()[6] = left.getColors()[6];
-		up.getColors()[7] = left.getColors()[7];
-		up.getColors()[8] = left.getColors()[8];
+		cube.getWhite().getColors()[6] = cube.getOrange().getColors()[6];
+		cube.getWhite().getColors()[7] = cube.getOrange().getColors()[7];
+		cube.getWhite().getColors()[8] = cube.getOrange().getColors()[8];
 		
-		left.getColors()[6] = down.getColors()[6];
-		left.getColors()[7] = down.getColors()[7];
-		left.getColors()[8] = down.getColors()[8];
+		cube.getOrange().getColors()[6] = cube.getYellow().getColors()[6];
+		cube.getOrange().getColors()[7] = cube.getYellow().getColors()[7];
+		cube.getOrange().getColors()[8] = cube.getYellow().getColors()[8];
 		
-		down.getColors()[6] = right.getColors()[6];
-		down.getColors()[7] = right.getColors()[7];
-		down.getColors()[8] = right.getColors()[8];
+		cube.getYellow().getColors()[6] = cube.getRed().getColors()[6];
+		cube.getYellow().getColors()[7] = cube.getRed().getColors()[7];
+		cube.getYellow().getColors()[8] = cube.getRed().getColors()[8];
 		
-		right.getColors()[6] = tempSideColors[0];
-		right.getColors()[7] = tempSideColors[1];
-		right.getColors()[8] = tempSideColors[2];
+		cube.getRed().getColors()[6] = tempSideColors[0];
+		cube.getRed().getColors()[7] = tempSideColors[1];
+		cube.getRed().getColors()[8] = tempSideColors[2];
 	}
 
 	@Override
-	public void rotateAntiClockwise() {
+	public void rotateAntiClockwise(Cube cube) {
 		System.out.println("Rotate Green face Ant-clockwise");
-		super.rotateAntiClockwise();
+		super.rotateAntiClockwise(cube);
 
 		Color[] tempSideColors = new Color[3];
-		tempSideColors[0] = up.getColors()[6];
-		tempSideColors[1] = up.getColors()[7];
-		tempSideColors[2] = up.getColors()[8];
+		tempSideColors[0] = cube.getWhite().getColors()[6];
+		tempSideColors[1] = cube.getWhite().getColors()[7];
+		tempSideColors[2] = cube.getWhite().getColors()[8];
 		
-		up.getColors()[6] = right.getColors()[6];
-		up.getColors()[7] = right.getColors()[7];
-		up.getColors()[8] = right.getColors()[8];
+		cube.getWhite().getColors()[6] = cube.getRed().getColors()[6];
+		cube.getWhite().getColors()[7] = cube.getRed().getColors()[7];
+		cube.getWhite().getColors()[8] = cube.getRed().getColors()[8];
 		
-		right.getColors()[6] = down.getColors()[6];
-		right.getColors()[7] = down.getColors()[7];
-		right.getColors()[8] = down.getColors()[8];
+		cube.getRed().getColors()[6] = cube.getYellow().getColors()[6];
+		cube.getRed().getColors()[7] = cube.getYellow().getColors()[7];
+		cube.getRed().getColors()[8] = cube.getYellow().getColors()[8];
 		
-		down.getColors()[6] = left.getColors()[6];
-		down.getColors()[7] = left.getColors()[7];
-		down.getColors()[8] = left.getColors()[8];
+		cube.getYellow().getColors()[6] = cube.getOrange().getColors()[6];
+		cube.getYellow().getColors()[7] = cube.getOrange().getColors()[7];
+		cube.getYellow().getColors()[8] = cube.getOrange().getColors()[8];
 		
-		left.getColors()[6] = tempSideColors[0];
-		left.getColors()[7] = tempSideColors[1];
-		left.getColors()[8] = tempSideColors[2];
+		cube.getOrange().getColors()[6] = tempSideColors[0];
+		cube.getOrange().getColors()[7] = tempSideColors[1];
+		cube.getOrange().getColors()[8] = tempSideColors[2];
 	}
 
 }

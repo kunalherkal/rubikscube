@@ -2,6 +2,7 @@ package com.kunalherkal.rubikscube.sides;
 
 import com.google.inject.Inject;
 import com.kunalherkal.rubikscube.colors.Color;
+import com.kunalherkal.rubikscube.cube.Cube;
 
 public final class White extends SideAdapter {
 
@@ -14,58 +15,58 @@ public final class White extends SideAdapter {
 	}
 
 	@Override
-	public void rotateClockwise() {
+	public void rotateClockwise(Cube cube) {
 		System.out.println("Rotate white face clockwise");
-		super.rotateClockwise();
+		super.rotateClockwise(cube);
 		
 		Color[] tempSideColors = new Color[3];
-		tempSideColors[0] = up.getColors()[6];
-		tempSideColors[1] = up.getColors()[7];
-		tempSideColors[2] = up.getColors()[8];
+		tempSideColors[0] = cube.getBlue().getColors()[6];
+		tempSideColors[1] = cube.getBlue().getColors()[7];
+		tempSideColors[2] = cube.getBlue().getColors()[8];
 		
-		up.getColors()[6] = left.getColors()[8];
-		up.getColors()[7] = left.getColors()[5];
-		up.getColors()[8] = left.getColors()[2];
+		cube.getBlue().getColors()[6] = cube.getOrange().getColors()[8];
+		cube.getBlue().getColors()[7] = cube.getOrange().getColors()[5];
+		cube.getBlue().getColors()[8] = cube.getOrange().getColors()[2];
 		
-		left.getColors()[2] = down.getColors()[0];
-		left.getColors()[5] = down.getColors()[1];
-		left.getColors()[8] = down.getColors()[2];
+		cube.getOrange().getColors()[2] = cube.getGreen().getColors()[0];
+		cube.getOrange().getColors()[5] = cube.getGreen().getColors()[1];
+		cube.getOrange().getColors()[8] = cube.getGreen().getColors()[2];
 		
-		down.getColors()[0] = right.getColors()[6];
-		down.getColors()[1] = right.getColors()[3];
-		down.getColors()[2] = right.getColors()[0];
+		cube.getGreen().getColors()[0] = cube.getRed().getColors()[6];
+		cube.getGreen().getColors()[1] = cube.getRed().getColors()[3];
+		cube.getGreen().getColors()[2] = cube.getRed().getColors()[0];
 		
-		right.getColors()[0] = tempSideColors[0];
-		right.getColors()[3] = tempSideColors[1];
-		right.getColors()[6] = tempSideColors[2];
+		cube.getRed().getColors()[0] = tempSideColors[0];
+		cube.getRed().getColors()[3] = tempSideColors[1];
+		cube.getRed().getColors()[6] = tempSideColors[2];
 
 	}
 
 	@Override
-	public void rotateAntiClockwise() {
+	public void rotateAntiClockwise(Cube cube) {
 		System.out.println("Rotate white face Ant-clockwise");
-		super.rotateAntiClockwise();
+		super.rotateAntiClockwise(cube);
 		
 		Color[] tempSideColors = new Color[3];
-		tempSideColors[0] = up.getColors()[6];
-		tempSideColors[1] = up.getColors()[7];
-		tempSideColors[2] = up.getColors()[8];
+		tempSideColors[0] = cube.getBlue().getColors()[6];
+		tempSideColors[1] = cube.getBlue().getColors()[7];
+		tempSideColors[2] = cube.getBlue().getColors()[8];
 		
-		up.getColors()[6] = right.getColors()[0];
-		up.getColors()[7] = right.getColors()[3];
-		up.getColors()[8] = right.getColors()[6];
+		cube.getBlue().getColors()[6] = cube.getRed().getColors()[0];
+		cube.getBlue().getColors()[7] = cube.getRed().getColors()[3];
+		cube.getBlue().getColors()[8] = cube.getRed().getColors()[6];
 		
-		right.getColors()[0] = down.getColors()[0];
-		right.getColors()[3] = down.getColors()[1];
-		right.getColors()[6] = down.getColors()[2];
+		cube.getRed().getColors()[0] = cube.getGreen().getColors()[0];
+		cube.getRed().getColors()[3] = cube.getGreen().getColors()[1];
+		cube.getRed().getColors()[6] = cube.getGreen().getColors()[2];
 		
-		down.getColors()[0] = left.getColors()[2];
-		down.getColors()[1] = left.getColors()[5];
-		down.getColors()[2] = left.getColors()[8];
+		cube.getGreen().getColors()[0] = cube.getOrange().getColors()[2];
+		cube.getGreen().getColors()[1] = cube.getOrange().getColors()[5];
+		cube.getGreen().getColors()[2] = cube.getOrange().getColors()[8];
 		
-		left.getColors()[2] = tempSideColors[2];
-		left.getColors()[5] = tempSideColors[1];
-		left.getColors()[8] = tempSideColors[0];
+		cube.getOrange().getColors()[2] = tempSideColors[2];
+		cube.getOrange().getColors()[5] = tempSideColors[1];
+		cube.getOrange().getColors()[8] = tempSideColors[0];
 	}
 
 }

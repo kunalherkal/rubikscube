@@ -31,7 +31,7 @@ public final class Cube {
 	}
 
 	private void initializeCube() {
-		this.white.setOpposite(this.yellow);
+		/*this.white.setOpposite(this.yellow);
 		this.white.setUp(this.blue);
 		this.white.setDown(this.green);
 		this.white.setLeft(this.orange);
@@ -65,7 +65,7 @@ public final class Cube {
 		this.yellow.setUp(this.blue);
 		this.yellow.setDown(this.green);
 		this.yellow.setLeft(this.red);
-		this.yellow.setRight(this.orange);
+		this.yellow.setRight(this.orange);*/
 		
 	}
 
