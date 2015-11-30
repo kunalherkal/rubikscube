@@ -59,125 +59,125 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 			return;
 		}
 		
-		Side up = yellow.getUp();
-		Side down = yellow.getDown();
-		Side left = yellow.getLeft();
-		Side right = yellow.getRight();
-		Side opposite = yellow.getOpposite();
+		Side blue = cube.getBlue();
+		Side green = cube.getGreen();
+		Side red = cube.getRed();
+		Side orange = cube.getOrange();
+		Side white = cube.getWhite();
 		
 		while (!(redSideTileIsWhite && blueSideTileIsWhite
 				&& orangeSideTileIsWhite && greenSideTileIsWhite)) {
 			//Moves for up side
-			moveUpsThirdPlacedWhiteTileOnYellowSide(yellow, up, right);
+			moveBluesThirdPlacedWhiteTileOnYellowSide(yellow, blue, orange);
 
-			moveUpsFifthPlacedWhiteTileOnYellowSide(yellow, up, left);
+			moveBluesFifthPlacedWhiteTileOnYellowSide(yellow, blue, red);
 			
-			while (up.getColors()[1] == Color.WHITE) {
+			while (blue.getColors()[1] == Color.WHITE) {
 				if(yellow.getColors()[1] == Color.WHITE){
 					yellow.rotateClockwise();
 				} else {
-					up.rotateClockwise();
-					moveUpsFifthPlacedWhiteTileOnYellowSide(yellow, up, left);
+					blue.rotateClockwise();
+					moveBluesFifthPlacedWhiteTileOnYellowSide(yellow, blue, red);
 				}
 			}
 
-			while (up.getColors()[7] == Color.WHITE) {
-				up.rotateClockwise();
-				moveUpsThirdPlacedWhiteTileOnYellowSide(yellow, up, right);
+			while (blue.getColors()[7] == Color.WHITE) {
+				blue.rotateClockwise();
+				moveBluesThirdPlacedWhiteTileOnYellowSide(yellow, blue, orange);
 			}
 			
 			//Moves for down side
-			moveDownsThirdPlacedWhiteTileOnYellowSide(yellow, down, right);
+			moveGreensThirdPlacedWhiteTileOnYellowSide(yellow, green, orange);
 
-			moveDownsFifthPlacedWhiteTileOnYellowSide(yellow, down, left);
+			moveGreensFifthPlacedWhiteTileOnYellowSide(yellow, green, red);
 			
-			while (up.getColors()[7] == Color.WHITE) {
+			while (blue.getColors()[7] == Color.WHITE) {
 				if(yellow.getColors()[7] == Color.WHITE){
 					yellow.rotateClockwise();
 				} else {
-					down.rotateClockwise();
-					moveDownsThirdPlacedWhiteTileOnYellowSide(yellow, down, right);
+					green.rotateClockwise();
+					moveGreensThirdPlacedWhiteTileOnYellowSide(yellow, green, orange);
 				}
 			}
 
-			while (down.getColors()[1] == Color.WHITE) {
-				down.rotateClockwise();
-				moveDownsFifthPlacedWhiteTileOnYellowSide(yellow, down, left);
+			while (green.getColors()[1] == Color.WHITE) {
+				green.rotateClockwise();
+				moveGreensFifthPlacedWhiteTileOnYellowSide(yellow, green, red);
 			}
 			
 			
 			//Moves for down left
-			moveLeftsFirstPlacedWhiteTileOnYellowSide(yellow, up, left);
+			moveRedsFirstPlacedWhiteTileOnYellowSide(yellow, blue, red);
 			
-			moveLeftsSeventhPlacedWhiteTileOnYellowSide(yellow, down, left);
+			moveRedsSeventhPlacedWhiteTileOnYellowSide(yellow, green, red);
 			
-			while (left.getColors()[3] == Color.WHITE) {
+			while (red.getColors()[3] == Color.WHITE) {
 				if(yellow.getColors()[3] == Color.WHITE){
 					yellow.rotateClockwise();
 				} else {
-					left.rotateClockwise();
-					moveLeftsFirstPlacedWhiteTileOnYellowSide(yellow, up, left);
+					red.rotateClockwise();
+					moveRedsFirstPlacedWhiteTileOnYellowSide(yellow, blue, red);
 				}
 			}
 
-			while (left.getColors()[5] == Color.WHITE) {
-				left.rotateClockwise();
-				moveLeftsSeventhPlacedWhiteTileOnYellowSide(yellow, down, left);
+			while (red.getColors()[5] == Color.WHITE) {
+				red.rotateClockwise();
+				moveRedsSeventhPlacedWhiteTileOnYellowSide(yellow, green, red);
 			}
 			
 			//Moves for right
-			moveRightsFirstPlacedWhiteTileOnYellowSide(yellow, up, right);
+			moveOrangesFirstPlacedWhiteTileOnYellowSide(yellow, blue, orange);
 			
-			moveRightsSeventhPlacedWhiteTileOnYellowSide(yellow, down, right);
+			moveOrangesSeventhPlacedWhiteTileOnYellowSide(yellow, green, orange);
 			
-			while (right.getColors()[5] == Color.WHITE) {
+			while (orange.getColors()[5] == Color.WHITE) {
 				if(yellow.getColors()[5] == Color.WHITE){
 					yellow.rotateClockwise();
 				} else {
-					right.rotateClockwise();
-					moveRightsSeventhPlacedWhiteTileOnYellowSide(yellow, down, right);
+					orange.rotateClockwise();
+					moveOrangesSeventhPlacedWhiteTileOnYellowSide(yellow, green, orange);
 				}
 			}
 
-			while (right.getColors()[3] == Color.WHITE) {
-				right.rotateClockwise();
-				moveRightsFirstPlacedWhiteTileOnYellowSide(yellow, up, right);
+			while (orange.getColors()[3] == Color.WHITE) {
+				orange.rotateClockwise();
+				moveOrangesFirstPlacedWhiteTileOnYellowSide(yellow, blue, orange);
 			}
 			
 			//Moves for opposite
-			while (opposite.getColors()[7] == Color.WHITE) {
+			while (white.getColors()[7] == Color.WHITE) {
 				if(yellow.getColors()[7] == Color.WHITE){
 					yellow.rotateClockwise();
 				} else {
-					down.rotateClockwise();
-					down.rotateClockwise();
+					green.rotateClockwise();
+					green.rotateClockwise();
 				}
 			}
 			
-			while (opposite.getColors()[1] == Color.WHITE) {
+			while (white.getColors()[1] == Color.WHITE) {
 				if(yellow.getColors()[1] == Color.WHITE){
 					yellow.rotateClockwise();
 				} else {
-					up.rotateClockwise();
-					up.rotateClockwise();
+					blue.rotateClockwise();
+					blue.rotateClockwise();
 				}
 			}
 			
-			while (opposite.getColors()[3] == Color.WHITE) {
+			while (white.getColors()[3] == Color.WHITE) {
 				if(yellow.getColors()[5] == Color.WHITE){
 					yellow.rotateClockwise();
 				} else {
-					right.rotateClockwise();
-					right.rotateClockwise();
+					orange.rotateClockwise();
+					orange.rotateClockwise();
 				}
 			}
 			
-			while (opposite.getColors()[5] == Color.WHITE) {
+			while (white.getColors()[5] == Color.WHITE) {
 				if(yellow.getColors()[3] == Color.WHITE){
 					yellow.rotateClockwise();
 				} else {
-					left.rotateClockwise();
-					left.rotateClockwise();
+					red.rotateClockwise();
+					red.rotateClockwise();
 				}
 			}
 			
@@ -211,91 +211,91 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 		
 	}
 
-	private void moveRightsSeventhPlacedWhiteTileOnYellowSide(Side yellow,
-			Side down, Side right) {
-		while (right.getColors()[7] == Color.WHITE) {
+	private void moveOrangesSeventhPlacedWhiteTileOnYellowSide(Side yellow,
+			Side green, Side orange) {
+		while (orange.getColors()[7] == Color.WHITE) {
 			if(yellow.getColors()[7] == Color.WHITE){
 				yellow.rotateClockwise();
 			} else {
-				down.rotateAntiClockwise();
+				green.rotateAntiClockwise();
 			}
 		}
 	}
 
-	private void moveRightsFirstPlacedWhiteTileOnYellowSide(Side yellow,
-			Side up, Side right) {
-		while (right.getColors()[1] == Color.WHITE) {
+	private void moveOrangesFirstPlacedWhiteTileOnYellowSide(Side yellow,
+			Side blue, Side orange) {
+		while (orange.getColors()[1] == Color.WHITE) {
 			if(yellow.getColors()[1] == Color.WHITE){
 				yellow.rotateClockwise();
 			} else {
-				up.rotateClockwise();
+				blue.rotateClockwise();
 			}
 		}
 	}
 
-	private void moveLeftsSeventhPlacedWhiteTileOnYellowSide(Side yellow,
-			Side down, Side left) {
-		while (left.getColors()[7] == Color.WHITE) {
+	private void moveRedsSeventhPlacedWhiteTileOnYellowSide(Side yellow,
+			Side green, Side red) {
+		while (red.getColors()[7] == Color.WHITE) {
 			if(yellow.getColors()[7] == Color.WHITE){
 				yellow.rotateClockwise();
 			} else {
-				down.rotateClockwise();
+				green.rotateClockwise();
 			}
 		}
 	}
 
-	private void moveLeftsFirstPlacedWhiteTileOnYellowSide(Side yellow,
-			Side up, Side left) {
-		while (left.getColors()[1] == Color.WHITE) {
+	private void moveRedsFirstPlacedWhiteTileOnYellowSide(Side yellow,
+			Side blue, Side red) {
+		while (red.getColors()[1] == Color.WHITE) {
 			if(yellow.getColors()[1] == Color.WHITE){
 				yellow.rotateClockwise();
 			} else {
-				up.rotateAntiClockwise();
+				blue.rotateAntiClockwise();
 			}
 		}
 	}
 
-	private void moveDownsFifthPlacedWhiteTileOnYellowSide(Side yellow,
-			Side down, Side left) {
-		while (down.getColors()[5] == Color.WHITE) {
+	private void moveGreensFifthPlacedWhiteTileOnYellowSide(Side yellow,
+			Side green, Side red) {
+		while (green.getColors()[5] == Color.WHITE) {
 			if(yellow.getColors()[3] == Color.WHITE){
 				yellow.rotateClockwise();
 			} else {
-				left.rotateAntiClockwise();
+				red.rotateAntiClockwise();
 			}
 		}
 	}
 
-	private void moveDownsThirdPlacedWhiteTileOnYellowSide(Side yellow,
-			Side down, Side right) {
-		while (down.getColors()[3] == Color.WHITE) {
+	private void moveGreensThirdPlacedWhiteTileOnYellowSide(Side yellow,
+			Side green, Side orange) {
+		while (green.getColors()[3] == Color.WHITE) {
 			if(yellow.getColors()[5] == Color.WHITE){
 				yellow.rotateClockwise();
 			} else {
-				right.rotateClockwise();
+				orange.rotateClockwise();
 			}
 		}
 	}
 
-	private void moveUpsFifthPlacedWhiteTileOnYellowSide(Side yellow, Side up,
-			Side left) {
-		while (up.getColors()[5] == Color.WHITE) {
+	private void moveBluesFifthPlacedWhiteTileOnYellowSide(Side yellow, Side blue,
+			Side red) {
+		while (blue.getColors()[5] == Color.WHITE) {
 			if(yellow.getColors()[3] == Color.WHITE){
 				yellow.rotateClockwise();
 			} else {
-				left.rotateClockwise();
+				red.rotateClockwise();
 			}
 		}
 	}
 
-	private void moveUpsThirdPlacedWhiteTileOnYellowSide(Side yellow, Side up,
-			Side right) {
+	private void moveBluesThirdPlacedWhiteTileOnYellowSide(Side yellow, Side blue,
+			Side orange) {
 		
-		while (up.getColors()[3] == Color.WHITE) {
+		while (blue.getColors()[3] == Color.WHITE) {
 			if(yellow.getColors()[5] == Color.WHITE){
 				yellow.rotateClockwise();
 			} else {
-				right.rotateAntiClockwise();
+				orange.rotateAntiClockwise();
 			}
 		}
 	}
