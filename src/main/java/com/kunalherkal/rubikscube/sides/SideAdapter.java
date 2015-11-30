@@ -6,7 +6,7 @@ import com.kunalherkal.rubikscube.colors.Color;
 import com.kunalherkal.rubikscube.cube.Cube;
 
 public abstract class SideAdapter implements Side {
-	
+	Cube cube;
 	final Color[] colors = new Color[9];
 
 	public void setTileColor(int index, Color color) {
@@ -19,7 +19,17 @@ public abstract class SideAdapter implements Side {
 	}
 	
 	@Override
-	public void rotateClockwise(Cube cube) {
+	public Cube getCube() {
+		return cube;
+	}
+
+	@Override
+	public void setCube(Cube cube) {
+		this.cube = cube;
+	}
+
+	@Override
+	public void rotateClockwise() {
 		Color[] tempColors = new Color[9];
 		tempColors[0] = colors[0];
 		tempColors[1] = colors[1];
@@ -43,7 +53,7 @@ public abstract class SideAdapter implements Side {
 	}
 
 	@Override
-	public void rotateAntiClockwise(Cube cube) {
+	public void rotateAntiClockwise() {
 		Color[] tempColors = new Color[9];
 		tempColors[0] = colors[0];
 		tempColors[1] = colors[1];

@@ -2,7 +2,6 @@ package com.kunalherkal.rubikscube.sides;
 
 import com.google.inject.Inject;
 import com.kunalherkal.rubikscube.colors.Color;
-import com.kunalherkal.rubikscube.cube.Cube;
 
 public final class Green extends SideAdapter {
 
@@ -14,9 +13,9 @@ public final class Green extends SideAdapter {
 	}
 
 	@Override
-	public void rotateClockwise(Cube cube) {
+	public void rotateClockwise() {
 		System.out.println("Rotate Green face clockwise");
-		super.rotateClockwise(cube);
+		super.rotateClockwise();
 
 		Color[] tempSideColors = new Color[3];
 		tempSideColors[0] = cube.getWhite().getColors()[6];
@@ -41,9 +40,9 @@ public final class Green extends SideAdapter {
 	}
 
 	@Override
-	public void rotateAntiClockwise(Cube cube) {
+	public void rotateAntiClockwise() {
 		System.out.println("Rotate Green face Ant-clockwise");
-		super.rotateAntiClockwise(cube);
+		super.rotateAntiClockwise();
 
 		Color[] tempSideColors = new Color[3];
 		tempSideColors[0] = cube.getWhite().getColors()[6];

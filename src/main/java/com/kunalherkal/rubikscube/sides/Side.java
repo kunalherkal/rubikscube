@@ -7,10 +7,14 @@ public interface Side {
 
 	void setTileColor(int index, Color color);
 
-	void rotateClockwise(Cube cube);
+	void rotateClockwise();
 
-	void rotateAntiClockwise(Cube cube);
+	void rotateAntiClockwise();
 	
 	public Color[] getColors();
+	
+	public Cube getCube();
+
+	public void setCube(Cube cube);
 
 }

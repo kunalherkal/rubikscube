@@ -31,6 +31,13 @@ public final class Cube {
 	}
 
 	private void initializeCube() {
+		
+		white.setCube(this);
+		yellow.setCube(this);
+		red.setCube(this);
+		orange.setCube(this);
+		blue.setCube(this);
+		green.setCube(this);
 		/*this.white.setOpposite(this.yellow);
 		this.white.setUp(this.blue);
 		this.white.setDown(this.green);
