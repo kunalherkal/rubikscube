@@ -154,5 +154,69 @@ public final class MovementTest1 {
 		Assert.assertEquals(Color.ORANGE, cube.getYellow().getColors()[8]);
 
 	}
+	
+	@Test
+	public void testClockWiseMovementForOrangeSide() {
+		cube.getOrange().rotateClockwise();
+
+		Assert.assertEquals(Color.ORANGE, cube.getOrange().getColors()[0]);
+		Assert.assertEquals(Color.ORANGE, cube.getOrange().getColors()[1]);
+		Assert.assertEquals(Color.ORANGE, cube.getOrange().getColors()[2]);
+		Assert.assertEquals(Color.ORANGE, cube.getOrange().getColors()[3]);
+		Assert.assertEquals(Color.ORANGE, cube.getOrange().getColors()[4]);
+		Assert.assertEquals(Color.ORANGE, cube.getOrange().getColors()[5]);
+		Assert.assertEquals(Color.ORANGE, cube.getOrange().getColors()[6]);
+		Assert.assertEquals(Color.ORANGE, cube.getOrange().getColors()[7]);
+		Assert.assertEquals(Color.ORANGE, cube.getOrange().getColors()[8]);
+		
+		Assert.assertEquals(Color.YELLOW, cube.getBlue().getColors()[0]);
+		Assert.assertEquals(Color.YELLOW, cube.getBlue().getColors()[3]);
+		Assert.assertEquals(Color.YELLOW, cube.getBlue().getColors()[6]);
+		
+		Assert.assertEquals(Color.BLUE, cube.getWhite().getColors()[6]);
+		Assert.assertEquals(Color.BLUE, cube.getWhite().getColors()[7]);
+		Assert.assertEquals(Color.BLUE, cube.getWhite().getColors()[8]);
+		
+		Assert.assertEquals(Color.GREEN, cube.getYellow().getColors()[0]);
+		Assert.assertEquals(Color.GREEN, cube.getYellow().getColors()[1]);
+		Assert.assertEquals(Color.GREEN, cube.getYellow().getColors()[2]);
+		
+		Assert.assertEquals(Color.WHITE, cube.getGreen().getColors()[2]);
+		Assert.assertEquals(Color.WHITE, cube.getGreen().getColors()[5]);
+		Assert.assertEquals(Color.WHITE, cube.getGreen().getColors()[8]);
+
+	}
+
+	@Test
+	public void testAntiClockWiseMovementForOrangeSide() {
+		cube.getOrange().rotateAntiClockwise();
+
+		Assert.assertEquals(Color.ORANGE, cube.getOrange().getColors()[0]);
+		Assert.assertEquals(Color.ORANGE, cube.getOrange().getColors()[1]);
+		Assert.assertEquals(Color.ORANGE, cube.getOrange().getColors()[2]);
+		Assert.assertEquals(Color.ORANGE, cube.getOrange().getColors()[3]);
+		Assert.assertEquals(Color.ORANGE, cube.getOrange().getColors()[4]);
+		Assert.assertEquals(Color.ORANGE, cube.getOrange().getColors()[5]);
+		Assert.assertEquals(Color.ORANGE, cube.getOrange().getColors()[6]);
+		Assert.assertEquals(Color.ORANGE, cube.getOrange().getColors()[7]);
+		Assert.assertEquals(Color.ORANGE, cube.getOrange().getColors()[8]);
+		
+		Assert.assertEquals(Color.WHITE, cube.getBlue().getColors()[0]);
+		Assert.assertEquals(Color.WHITE, cube.getBlue().getColors()[3]);
+		Assert.assertEquals(Color.WHITE, cube.getBlue().getColors()[6]);
+		
+		Assert.assertEquals(Color.GREEN, cube.getWhite().getColors()[6]);
+		Assert.assertEquals(Color.GREEN, cube.getWhite().getColors()[7]);
+		Assert.assertEquals(Color.GREEN, cube.getWhite().getColors()[8]);
+		
+		Assert.assertEquals(Color.BLUE, cube.getYellow().getColors()[0]);
+		Assert.assertEquals(Color.BLUE, cube.getYellow().getColors()[1]);
+		Assert.assertEquals(Color.BLUE, cube.getYellow().getColors()[2]);
+		
+		Assert.assertEquals(Color.YELLOW, cube.getGreen().getColors()[2]);
+		Assert.assertEquals(Color.YELLOW, cube.getGreen().getColors()[5]);
+		Assert.assertEquals(Color.YELLOW, cube.getGreen().getColors()[8]);
+
+	}
 
 }
