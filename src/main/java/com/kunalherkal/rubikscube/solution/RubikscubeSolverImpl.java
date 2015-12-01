@@ -170,22 +170,22 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 
 	private void moveRedsWhiteTilesToYellow(Side yellow, Side blue, Side green,
 			Side red) {
-		moveRedsFirstPlacedWhiteTileOnYellowSide(yellow, blue, red);
+		moveRedsThirdPlacedWhiteTileOnYellowSide(yellow, blue, red);
 		
-		moveRedsSeventhPlacedWhiteTileOnYellowSide(yellow, green, red);
+		moveRedsFifthPlacedWhiteTileOnYellowSide(yellow, green, red);
 		
-		while (red.getColors()[3] == Color.WHITE) {
-			if(yellow.getColors()[3] == Color.WHITE){
+		while (red.getColors()[7] == Color.WHITE) {
+			if(yellow.getColors()[7] == Color.WHITE){
 				yellow.rotateClockwise();
 			} else {
 				red.rotateClockwise();
-				moveRedsFirstPlacedWhiteTileOnYellowSide(yellow, blue, red);
+				moveRedsThirdPlacedWhiteTileOnYellowSide(yellow, blue, red);
 			}
 		}
 
-		while (red.getColors()[5] == Color.WHITE) {
+		while (red.getColors()[1] == Color.WHITE) {
 			red.rotateClockwise();
-			moveRedsSeventhPlacedWhiteTileOnYellowSide(yellow, green, red);
+			moveRedsFifthPlacedWhiteTileOnYellowSide(yellow, green, red);
 		}
 	}
 
@@ -253,10 +253,10 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 		}
 	}
 
-	private void moveRedsSeventhPlacedWhiteTileOnYellowSide(Side yellow,
+	private void moveRedsFifthPlacedWhiteTileOnYellowSide(Side yellow,
 			Side green, Side red) {
-		while (red.getColors()[7] == Color.WHITE) {
-			if(yellow.getColors()[7] == Color.WHITE){
+		while (red.getColors()[5] == Color.WHITE) {
+			if(yellow.getColors()[5] == Color.WHITE){
 				yellow.rotateClockwise();
 			} else {
 				green.rotateClockwise();
@@ -264,10 +264,10 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 		}
 	}
 
-	private void moveRedsFirstPlacedWhiteTileOnYellowSide(Side yellow,
+	private void moveRedsThirdPlacedWhiteTileOnYellowSide(Side yellow,
 			Side blue, Side red) {
-		while (red.getColors()[1] == Color.WHITE) {
-			if(yellow.getColors()[1] == Color.WHITE){
+		while (red.getColors()[3] == Color.WHITE) {
+			if(yellow.getColors()[3] == Color.WHITE){
 				yellow.rotateClockwise();
 			} else {
 				blue.rotateAntiClockwise();
