@@ -67,7 +67,7 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 		
 		while (!(redSideTileIsWhite && blueSideTileIsWhite
 				&& orangeSideTileIsWhite && greenSideTileIsWhite)) {
-
+			System.out.println("In while "  + cube.toString());
 			moveBluesWhiteTilesToYellow(yellow, blue, red, orange);
 			
 			moveGreensWhiteTilesToYellow(yellow, blue, green, red, orange);
@@ -110,6 +110,7 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 
 	private void moveWhitesWhiteTilesToYellow(Side yellow, Side blue,
 			Side green, Side red, Side orange, Side white) {
+		System.out.println("In moveWhitesWhiteTilesToYellow "  + cube.toString());
 		while (white.getColors()[3] == Color.WHITE) {
 			if(yellow.getColors()[3] == Color.WHITE){
 				yellow.rotateClockwise();
@@ -138,6 +139,7 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 		}
 		
 		while (white.getColors()[7] == Color.WHITE) {
+			System.out.println("Cube: " + cube.toString());
 			if(yellow.getColors()[1] == Color.WHITE){
 				yellow.rotateClockwise();
 			} else {
@@ -149,6 +151,7 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 
 	private void moveOrangesWhiteTilesToYellow(Side yellow, Side blue,
 			Side green, Side orange) {
+		System.out.println("In moveOrangesWhiteTilesToYellow "  + cube.toString());
 		moveOrangesThirdPlacedWhiteTileOnYellowSide(yellow, green, orange);
 		
 		moveOrangesFifthPlacedWhiteTileOnYellowSide(yellow, blue, orange);
@@ -170,6 +173,7 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 
 	private void moveRedsWhiteTilesToYellow(Side yellow, Side blue, Side green,
 			Side red) {
+		System.out.println("In moveRedsWhiteTilesToYellow "  + cube.toString());
 		moveRedsThirdPlacedWhiteTileOnYellowSide(yellow, blue, red);
 		
 		moveRedsFifthPlacedWhiteTileOnYellowSide(yellow, green, red);
@@ -191,6 +195,7 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 
 	private void moveGreensWhiteTilesToYellow(Side yellow, Side blue,
 			Side green, Side red, Side orange) {
+		System.out.println("In moveGreensWhiteTilesToYellow "  + cube.toString());
 		moveGreensThirdPlacedWhiteTileOnYellowSide(yellow, green, red);
 
 		moveGreensFifthPlacedWhiteTileOnYellowSide(yellow, green, orange);
@@ -212,6 +217,7 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 
 	private void moveBluesWhiteTilesToYellow(Side yellow, Side blue, Side red,
 			Side orange) {
+		System.out.println("In moveBluesWhiteTilesToYellow. Cube: " + cube.toString());
 		moveBluesThirdPlacedWhiteTileOnYellowSide(yellow, blue, orange);
 
 		moveBluesFifthPlacedWhiteTileOnYellowSide(yellow, blue, red);
@@ -248,7 +254,7 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 			if(yellow.getColors()[5] == Color.WHITE){
 				yellow.rotateClockwise();
 			} else {
-				green.rotateClockwise();
+				green.rotateAntiClockwise();
 			}
 		}
 	}

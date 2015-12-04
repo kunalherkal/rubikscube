@@ -35,8 +35,8 @@ public final class Orange extends SideAdapter {
 		cube.getWhite().getColors()[8] = cube.getBlue().getColors()[6];
 
 		cube.getBlue().getColors()[0] = tempSideColors[2];
-		cube.getBlue().getColors()[6] = tempSideColors[1];
-		cube.getBlue().getColors()[3] = tempSideColors[0];
+		cube.getBlue().getColors()[3] = tempSideColors[1];
+		cube.getBlue().getColors()[6] = tempSideColors[0];
 
 	}
 
