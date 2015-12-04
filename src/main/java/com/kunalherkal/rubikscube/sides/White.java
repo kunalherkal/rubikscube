@@ -23,21 +23,21 @@ public final class White extends SideAdapter {
 		tempSideColors[1] = cube.getBlue().getColors()[7];
 		tempSideColors[2] = cube.getBlue().getColors()[8];
 		
-		cube.getBlue().getColors()[6] = cube.getOrange().getColors()[8];
-		cube.getBlue().getColors()[7] = cube.getOrange().getColors()[5];
-		cube.getBlue().getColors()[8] = cube.getOrange().getColors()[2];
+		cube.getBlue().getColors()[6] = cube.getOrange().getColors()[6];
+		cube.getBlue().getColors()[7] = cube.getOrange().getColors()[7];
+		cube.getBlue().getColors()[8] = cube.getOrange().getColors()[8];
 		
-		cube.getOrange().getColors()[2] = cube.getGreen().getColors()[0];
-		cube.getOrange().getColors()[5] = cube.getGreen().getColors()[1];
-		cube.getOrange().getColors()[8] = cube.getGreen().getColors()[2];
+		cube.getOrange().getColors()[6] = cube.getGreen().getColors()[6];
+		cube.getOrange().getColors()[7] = cube.getGreen().getColors()[7];
+		cube.getOrange().getColors()[8] = cube.getGreen().getColors()[8];
 		
-		cube.getGreen().getColors()[0] = cube.getRed().getColors()[6];
-		cube.getGreen().getColors()[1] = cube.getRed().getColors()[3];
-		cube.getGreen().getColors()[2] = cube.getRed().getColors()[0];
+		cube.getGreen().getColors()[6] = cube.getRed().getColors()[6];
+		cube.getGreen().getColors()[7] = cube.getRed().getColors()[7];
+		cube.getGreen().getColors()[8] = cube.getRed().getColors()[8];
 		
-		cube.getRed().getColors()[0] = tempSideColors[0];
-		cube.getRed().getColors()[3] = tempSideColors[1];
-		cube.getRed().getColors()[6] = tempSideColors[2];
+		cube.getRed().getColors()[6] = tempSideColors[0];
+		cube.getRed().getColors()[7] = tempSideColors[1];
+		cube.getRed().getColors()[8] = tempSideColors[2];
 
 	}
 
@@ -51,21 +51,21 @@ public final class White extends SideAdapter {
 		tempSideColors[1] = cube.getBlue().getColors()[7];
 		tempSideColors[2] = cube.getBlue().getColors()[8];
 		
-		cube.getBlue().getColors()[6] = cube.getRed().getColors()[0];
-		cube.getBlue().getColors()[7] = cube.getRed().getColors()[3];
-		cube.getBlue().getColors()[8] = cube.getRed().getColors()[6];
+		cube.getBlue().getColors()[6] = cube.getRed().getColors()[6];
+		cube.getBlue().getColors()[7] = cube.getRed().getColors()[7];
+		cube.getBlue().getColors()[8] = cube.getRed().getColors()[8];
 		
-		cube.getRed().getColors()[0] = cube.getGreen().getColors()[0];
-		cube.getRed().getColors()[3] = cube.getGreen().getColors()[1];
-		cube.getRed().getColors()[6] = cube.getGreen().getColors()[2];
+		cube.getRed().getColors()[6] = cube.getGreen().getColors()[6];
+		cube.getRed().getColors()[7] = cube.getGreen().getColors()[7];
+		cube.getRed().getColors()[8] = cube.getGreen().getColors()[8];
 		
-		cube.getGreen().getColors()[0] = cube.getOrange().getColors()[2];
-		cube.getGreen().getColors()[1] = cube.getOrange().getColors()[5];
-		cube.getGreen().getColors()[2] = cube.getOrange().getColors()[8];
+		cube.getGreen().getColors()[6] = cube.getOrange().getColors()[6];
+		cube.getGreen().getColors()[7] = cube.getOrange().getColors()[7];
+		cube.getGreen().getColors()[8] = cube.getOrange().getColors()[8];
 		
-		cube.getOrange().getColors()[2] = tempSideColors[2];
-		cube.getOrange().getColors()[5] = tempSideColors[1];
-		cube.getOrange().getColors()[8] = tempSideColors[0];
+		cube.getOrange().getColors()[6] = tempSideColors[0];
+		cube.getOrange().getColors()[7] = tempSideColors[1];
+		cube.getOrange().getColors()[8] = tempSideColors[2];
 	}
 
 }
