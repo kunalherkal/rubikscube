@@ -8,5 +8,6 @@ public interface RubikscubeSolver {
 	
 	void solveWhiteCrosssOnYellowSide();
 	
+	void solveWhiteCross();
 
 }

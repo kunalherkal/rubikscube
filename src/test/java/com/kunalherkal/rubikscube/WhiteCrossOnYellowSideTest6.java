@@ -84,12 +84,12 @@ public final class WhiteCrossOnYellowSideTest6 {
 	
 	@Test
 	public void testWhiteCrossOnYellowSide() throws Exception{
-		rubikscubeSolver.solveWhiteCrosssOnYellowSide();
+		rubikscubeSolver.solveWhiteCross();
 		
-		cube.getYellow().setTileColor(1, Color.WHITE);
-		cube.getYellow().setTileColor(3, Color.WHITE);
-		cube.getYellow().setTileColor(5, Color.WHITE);
-		cube.getYellow().setTileColor(7, Color.WHITE);
+		cube.getWhite().setTileColor(1, Color.WHITE);
+		cube.getWhite().setTileColor(3, Color.WHITE);
+		cube.getWhite().setTileColor(5, Color.WHITE);
+		cube.getWhite().setTileColor(7, Color.WHITE);
 		
 	}
 

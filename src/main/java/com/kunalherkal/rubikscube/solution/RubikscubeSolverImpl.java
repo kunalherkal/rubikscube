@@ -1,5 +1,8 @@
 package com.kunalherkal.rubikscube.solution;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import com.google.inject.Inject;
 import com.kunalherkal.rubikscube.colors.Color;
 import com.kunalherkal.rubikscube.cube.Cube;
@@ -23,12 +26,78 @@ public final class RubikscubeSolverImpl implements RubikscubeSolver {
 		
 	}
 
-	private void solveWhiteCross() {
+	public void solveWhiteCross() {
 
 		
 			solveWhiteCrosssOnYellowSide();
-		
+			solveforWhiteCrossOnWhiteSide();
 
+	}
+	
+	private void solveforWhiteCrossOnWhiteSide() {
+		boolean redSideTileIsWhite = true;
+		boolean blueSideTileIsWhite = true;
+		boolean greenSideTileIsWhite = true;
+		boolean orangeSideTileIsWhite = true;
+		
+		Side yellow = cube.getYellow();
+		Side blue = cube.getBlue();
+		Side green = cube.getGreen();
+		Side red = cube.getRed();
+		Side orange = cube.getOrange();
+		
+		List<Side> sides = new LinkedList<>();
+		sides.add(red);
+		sides.add(green);
+		sides.add(orange);
+		sides.add(blue);
+		
+		while(redSideTileIsWhite || blueSideTileIsWhite || orangeSideTileIsWhite || greenSideTileIsWhite){
+			
+			for(Side side : sides) {
+				while(side.getColors()[1] != side.getColors()[4]){
+					yellow.rotateClockwise();
+				}
+				
+				if(side.getColors()[1] == side.getColors()[4]) {
+					side.rotateClockwise();
+					side.rotateClockwise();
+				}
+				
+			}
+			
+			if(yellow.getColors()[1] == Color.WHITE){
+				blueSideTileIsWhite = true;
+			} else {
+				blueSideTileIsWhite = false;
+			}
+				
+			if(yellow.getColors()[3] == Color.WHITE){
+				redSideTileIsWhite = true;
+			}  else {
+				redSideTileIsWhite = false;
+			}
+				
+					
+			if(yellow.getColors()[5] == Color.WHITE){
+				orangeSideTileIsWhite = true;
+			}  else {
+				orangeSideTileIsWhite = false;
+			}
+				
+				 
+			if(yellow.getColors()[7] == Color.WHITE){
+				greenSideTileIsWhite = true;
+			} else {
+				greenSideTileIsWhite = false;
+			}
+				
+			
+		}
+		
+		System.out.println("By now you should have white cross on white side");
+		
+		
 	}
 
 	public void solveWhiteCrosssOnYellowSide()  {
